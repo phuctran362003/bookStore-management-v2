@@ -57,11 +57,11 @@
             // 
             lblHeading.AutoSize = true;
             lblHeading.BackColor = SystemColors.HotTrack;
-            lblHeading.Font = new Font("SF Mono", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHeading.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblHeading.ForeColor = SystemColors.ButtonFace;
-            lblHeading.Location = new Point(0, 23);
+            lblHeading.Location = new Point(0, 18);
             lblHeading.Name = "lblHeading";
-            lblHeading.Size = new Size(300, 36);
+            lblHeading.Size = new Size(300, 41);
             lblHeading.TabIndex = 0;
             lblHeading.Text = "Book Management";
             // 
