@@ -8,14 +8,14 @@ namespace BookManagement_PhucTG
     public partial class BookManagerMainUI : Form
     {
         BookDAO bookDAO = new BookDAO();
-        private Book selected = null; //chờ ai đó ấn nút grid table
+        public Book selected = null; //chờ ai đó ấn nút grid table
         // gán xuống cuốn sách đang chọn
 
         public BookManagerMainUI()
         {
             InitializeComponent();
         }
-        private void BookManagerMainUI_Load(object sender, EventArgs e)
+        public void BookManagerMainUI_Load(object sender, EventArgs e)
         {
             var result = bookDAO.GetAllBooks();
             dgvBookList.DataSource = null;
@@ -43,11 +43,11 @@ namespace BookManagement_PhucTG
                 MessageBox.Show("Search keyword is required", "Field text is required", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-                var result = bookDAO.Search(txtKeyword.Text.Trim());
-                dgvBookList.DataSource = null;
-                dgvBookList.DataSource = result;
+            var result = bookDAO.Search(txtKeyword.Text.Trim());
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
 
-            
+
 
             //if no resul, notify and return the list
             if (dgvBookList.Rows.Count == 0)
@@ -113,9 +113,16 @@ namespace BookManagement_PhucTG
             {
                 selected = (Book)dgvBookList.SelectedRows[0].DataBoundItem;
                 bookDAO.Delete(selected.BookId);
-                MessageBox.Show("Delete successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Delete successfully! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //delete thành công thì refresh lại lưới
+            var result = bookDAO.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
+        }
+
+        private void dgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             var result = bookDAO.GetAllBooks();
             dgvBookList.DataSource = null;
             dgvBookList.DataSource = result;

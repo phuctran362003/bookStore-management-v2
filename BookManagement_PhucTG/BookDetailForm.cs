@@ -28,9 +28,7 @@ namespace BookManagement_PhucTG
         {
             //fill comboBox
             cboBookCategory.DataSource = bookCategoryDAO.GetBookCategories();
-
             cboBookCategory.DisplayMember = "BookGenreType";
-
             cboBookCategory.ValueMember = "BookCategoryId";
 
             //vi diệu
@@ -41,7 +39,7 @@ namespace BookManagement_PhucTG
             //if yes, fill data into Text boxes
             if (SelectedBook != null)
             {
-                txtBookID.ReadOnly = true;
+                txtBookID.Enabled = false;
                 txtBookID.BackColor = Color.LightGray;
 
                 txtBookID.Text = SelectedBook.BookId.ToString();
@@ -50,12 +48,17 @@ namespace BookManagement_PhucTG
                 txtBookDescription.Text = SelectedBook.Description.ToString();
                 dtpPublicatioDate.Value = SelectedBook.PublicationDate;
                 txtQuantity.Text = SelectedBook.Quantity.ToString();
-                txtAuthor.Text = SelectedBook.Author.ToString(); txtPrice.Text = SelectedBook.Price.ToString();
+                txtAuthor.Text = SelectedBook.Author.ToString();
+                txtPrice.Text = SelectedBook.Price.ToString();
 
                 //!important
                 //assign value BookCategoryID to combo box and convert it into BookGenreType; 
                 cboBookCategory.SelectedValue = SelectedBook.BookCategoryId;
 
+            }
+            else
+            {
+                lblHeader.Text = " Add a new book";
             }
 
 
@@ -75,6 +78,28 @@ namespace BookManagement_PhucTG
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+
+
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            SelectedBook.BookName = txtBookName.Text;
+            SelectedBook.Description = txtBookDescription.Text;
+            SelectedBook.PublicationDate = dtpPublicatioDate.Value;
+
+
+            bookDAO.UpdateABook(SelectedBook);
+
+            MessageBox.Show("Update Successfuly ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+
+            BookManagerMainUI f = new BookManagerMainUI();
+            f.selected = SelectedBook;
+            this.Close();
+            f.ShowDialog();
         }
     }
 }

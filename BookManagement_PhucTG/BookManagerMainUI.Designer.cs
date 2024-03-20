@@ -195,6 +195,7 @@
             dgvBookList.RowTemplate.Height = 29;
             dgvBookList.Size = new Size(778, 293);
             dgvBookList.TabIndex = 10;
+            dgvBookList.CellContentClick += dgvBookList_CellContentClick;
             dgvBookList.SelectionChanged += dgvBookList_SelectionChanged;
             // 
             // lblBookList

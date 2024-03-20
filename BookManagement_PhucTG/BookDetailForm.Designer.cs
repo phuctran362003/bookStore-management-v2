@@ -32,7 +32,6 @@
             grbBookInfo = new GroupBox();
             groupBox1 = new GroupBox();
             btnCancel = new Button();
-            btnCreate = new Button();
             btnSaveChanges = new Button();
             cboBookCategory = new ComboBox();
             dtpPublicatioDate = new DateTimePicker();
@@ -89,7 +88,6 @@
             // 
             groupBox1.BackColor = SystemColors.ControlLight;
             groupBox1.Controls.Add(btnCancel);
-            groupBox1.Controls.Add(btnCreate);
             groupBox1.Controls.Add(btnSaveChanges);
             groupBox1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = SystemColors.MenuHighlight;
@@ -106,7 +104,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancel.ForeColor = SystemColors.Control;
-            btnCancel.Location = new Point(33, 267);
+            btnCancel.Location = new Point(33, 189);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(128, 34);
             btnCancel.TabIndex = 19;
@@ -114,31 +112,19 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
-            // btnCreate
-            // 
-            btnCreate.BackColor = Color.LightSeaGreen;
-            btnCreate.FlatStyle = FlatStyle.Flat;
-            btnCreate.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCreate.ForeColor = SystemColors.Control;
-            btnCreate.Location = new Point(33, 53);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(128, 46);
-            btnCreate.TabIndex = 18;
-            btnCreate.Text = "Create";
-            btnCreate.UseVisualStyleBackColor = false;
-            // 
             // btnSaveChanges
             // 
             btnSaveChanges.BackColor = Color.LimeGreen;
             btnSaveChanges.FlatStyle = FlatStyle.Flat;
             btnSaveChanges.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSaveChanges.ForeColor = SystemColors.Control;
-            btnSaveChanges.Location = new Point(33, 152);
+            btnSaveChanges.Location = new Point(33, 41);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(128, 46);
             btnSaveChanges.TabIndex = 5;
-            btnSaveChanges.Text = "Save";
+            btnSaveChanges.Text = "Save Changes";
             btnSaveChanges.UseVisualStyleBackColor = false;
+            btnSaveChanges.Click += btnSaveChanges_Click;
             // 
             // cboBookCategory
             // 
@@ -269,11 +255,11 @@
             // 
             lblPrice.AutoSize = true;
             lblPrice.BackColor = SystemColors.ButtonFace;
-            lblPrice.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblPrice.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblPrice.ForeColor = SystemColors.MenuHighlight;
             lblPrice.Location = new Point(525, 289);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(69, 31);
+            lblPrice.Size = new Size(67, 31);
             lblPrice.TabIndex = 6;
             lblPrice.Text = "Price";
             // 
@@ -292,8 +278,10 @@
             txtBookID.BackColor = Color.FromArgb(224, 224, 224);
             txtBookID.Location = new Point(193, 38);
             txtBookID.Name = "txtBookID";
+            txtBookID.RightToLeft = RightToLeft.Yes;
             txtBookID.Size = new Size(250, 25);
             txtBookID.TabIndex = 0;
+            txtBookID.TextAlign = HorizontalAlignment.Center;
             txtBookID.Click += txtBookID_Click;
             // 
             // lblBookID
@@ -371,7 +359,6 @@
         private TextBox txtBookID;
         private Label lblBookID;
         private Label lblHeader;
-        private Button btnCreate;
         private Label lblAddUpdate;
         private GroupBox groupBox1;
         private Button btnCancel;
