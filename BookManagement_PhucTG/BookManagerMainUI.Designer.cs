@@ -52,11 +52,11 @@
             // lblHeader
             // 
             lblHeader.AutoSize = true;
-            lblHeader.Font = new Font("SF Mono", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblHeader.Font = new Font("Segoe UI Black", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblHeader.ForeColor = Color.Snow;
             lblHeader.Location = new Point(-2, 9);
             lblHeader.Name = "lblHeader";
-            lblHeader.Size = new Size(372, 56);
+            lblHeader.Size = new Size(363, 62);
             lblHeader.TabIndex = 0;
             lblHeader.Text = "Book Manager";
             // 
@@ -65,7 +65,7 @@
             lblBookName.AutoSize = true;
             lblBookName.BackColor = SystemColors.ActiveBorder;
             lblBookName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBookName.ForeColor = Color.Snow;
+            lblBookName.ForeColor = SystemColors.MenuHighlight;
             lblBookName.Location = new Point(6, 36);
             lblBookName.Name = "lblBookName";
             lblBookName.Size = new Size(139, 31);
@@ -122,7 +122,7 @@
             lblBookDescription.AutoSize = true;
             lblBookDescription.BackColor = SystemColors.ActiveBorder;
             lblBookDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblBookDescription.ForeColor = Color.Snow;
+            lblBookDescription.ForeColor = SystemColors.MenuHighlight;
             lblBookDescription.Location = new Point(384, 36);
             lblBookDescription.Name = "lblBookDescription";
             lblBookDescription.Size = new Size(147, 31);

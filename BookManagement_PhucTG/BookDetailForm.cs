@@ -41,7 +41,11 @@ namespace BookManagement_PhucTG
             //if yes, fill data into Text box
             if (SelectedBook != null)
             {
+                txtBookID.ReadOnly = true;
+                txtBookID.BackColor = Color.LightGray;
+
                 txtBookID.Text = SelectedBook.BookId.ToString();
+
                 txtBookName.Text = SelectedBook.BookName.ToString();
                 txtBookDescription.Text = SelectedBook.Description.ToString();
                 dtpPublicatioDate.Value = SelectedBook.PublicationDate;
@@ -60,10 +64,17 @@ namespace BookManagement_PhucTG
 
         }
 
+        private void txtBookID_Click(object sender, EventArgs e)
+        {
+            if (SelectedBook != null)
+            {
+                MessageBox.Show("You cannot change ID of a existing book! ", "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-
-
-
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

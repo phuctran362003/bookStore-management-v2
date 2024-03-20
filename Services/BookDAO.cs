@@ -29,10 +29,7 @@ namespace Services
         }
 
 
-        public Book GetABook(int id)
-        {
-            return bookDTO.
-        }
+        
 
         public void AddABook (Book book)
         {
