@@ -19,8 +19,29 @@ namespace Services
 
         public List<Book> Search(string keyword)
         {
-            return bookDTO.GetAll().Where(x => x.BookId.ToString().ToLower().Contains(keyword.ToLower()) ||
+            return bookDTO.GetAll().Where(x => x.BookName.ToString().ToLower().Contains(keyword.ToLower()) ||
                                                x.Description.ToString().ToLower().Contains(keyword.ToLower())).ToList();
+        }
+
+        public void Delete(int id)
+        {
+             bookDTO.Delete(id);
+        }
+
+
+        public Book GetABook(int id)
+        {
+            return bookDTO.
+        }
+
+        public void AddABook (Book book)
+        {
+            bookDTO.Create(book);   //try-catch, trùng mã số, bỏ trống ô nhập
+        }
+
+        public void UpdateABook(Book book)
+        {
+            bookDTO.Update(book); //try-catch, Validation
         }
     }
 }

@@ -89,7 +89,7 @@
             btnCreate.FlatStyle = FlatStyle.Flat;
             btnCreate.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCreate.ForeColor = SystemColors.Control;
-            btnCreate.Location = new Point(832, 141);
+            btnCreate.Location = new Point(661, 438);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(128, 46);
             btnCreate.TabIndex = 18;
@@ -232,11 +232,11 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSearch.ForeColor = SystemColors.Control;
-            btnSearch.Location = new Point(832, 32);
+            btnSearch.Location = new Point(527, 438);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(128, 46);
             btnSearch.TabIndex = 5;
-            btnSearch.Text = "Search";
+            btnSearch.Text = "Save";
             btnSearch.UseVisualStyleBackColor = false;
             // 
             // txtBookDescription

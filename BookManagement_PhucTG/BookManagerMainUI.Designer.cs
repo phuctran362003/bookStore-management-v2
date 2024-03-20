@@ -155,6 +155,7 @@
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Delete a book";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 

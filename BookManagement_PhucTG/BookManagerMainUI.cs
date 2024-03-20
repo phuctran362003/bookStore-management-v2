@@ -38,15 +38,29 @@ namespace BookManagement_PhucTG
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtKeyword.Text))
+            if (string.IsNullOrWhiteSpace(txtKeyword.Text))
             {
-                MessageBox.Show("Input must not be empty!!", "Input required", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Search keyword is required", "Select one book! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                var result = bookDAO.Search(txtKeyword.Text.Trim());
+                dgvBookList.DataSource = null;
+                dgvBookList.DataSource = result;
 
-            var result = bookDAO.Search(txtKeyword.Text);
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
+            }
+
+            //if no resul, notify and return the list
+            if (dgvBookList.Rows.Count == 0)
+            {
+                MessageBox.Show("No book is displayed! Please check again", "Invalid book ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+
         }
 
 
@@ -55,7 +69,7 @@ namespace BookManagement_PhucTG
         private void btnCreate_Click(object sender, EventArgs e)
         {
             BookDetailForm f1 = new BookDetailForm();
-            f1.ShowDialog();
+            f1.Show();
             //no book is passed, show empty form
         }
 
@@ -95,6 +109,18 @@ namespace BookManagement_PhucTG
 
         }
 
-
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvBookList.SelectedRows.Count > 0)
+            {
+                selected = (Book)dgvBookList.SelectedRows[0].DataBoundItem;
+                bookDAO.Delete(selected.BookId);
+                MessageBox.Show("Delete successfully! ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //delete thành công thì refresh lại lưới
+            var result = bookDAO.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
+        }
     }
 }

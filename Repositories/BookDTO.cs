@@ -10,7 +10,10 @@ namespace Repositories
     public class BookDTO
     {
         BookManagementDb24Context db = new BookManagementDb24Context();
-
+        public Book Get(int id)
+        {
+            return db.Books.FirstOrDefault(x => x.BookId == id);
+        }
         public List<Book> GetAll()
         {
             return db.Books.ToList();
