@@ -38,7 +38,7 @@ namespace BookManagement_PhucTG
 
 
             //check if user clicks update
-            //if yes, fill data into Text box
+            //if yes, fill data into Text boxes
             if (SelectedBook != null)
             {
                 txtBookID.ReadOnly = true;

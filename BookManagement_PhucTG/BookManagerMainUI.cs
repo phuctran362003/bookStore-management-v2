@@ -38,18 +38,16 @@ namespace BookManagement_PhucTG
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtKeyword.Text))
+            if (string.IsNullOrWhiteSpace(txtKeyword.Text) && (string.IsNullOrEmpty(txtBookName.Text)))
             {
-                MessageBox.Show("Search keyword is required", "Select one book! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Search keyword is required", "Field text is required", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else
-            {
                 var result = bookDAO.Search(txtKeyword.Text.Trim());
                 dgvBookList.DataSource = null;
                 dgvBookList.DataSource = result;
 
-            }
+            
 
             //if no resul, notify and return the list
             if (dgvBookList.Rows.Count == 0)

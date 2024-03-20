@@ -78,7 +78,7 @@
             grbBookInfo.Controls.Add(lblBookID);
             grbBookInfo.Font = new Font("SF Mono", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grbBookInfo.ForeColor = SystemColors.HotTrack;
-            grbBookInfo.Location = new Point(12, 71);
+            grbBookInfo.Location = new Point(12, 84);
             grbBookInfo.Name = "grbBookInfo";
             grbBookInfo.Size = new Size(986, 543);
             grbBookInfo.TabIndex = 12;
@@ -133,7 +133,7 @@
             btnSaveChanges.FlatStyle = FlatStyle.Flat;
             btnSaveChanges.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnSaveChanges.ForeColor = SystemColors.Control;
-            btnSaveChanges.Location = new Point(33, 156);
+            btnSaveChanges.Location = new Point(33, 152);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(128, 46);
             btnSaveChanges.TabIndex = 5;
@@ -165,11 +165,11 @@
             // 
             lblBookCategory.AutoSize = true;
             lblBookCategory.BackColor = SystemColors.ButtonFace;
-            lblBookCategory.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblBookCategory.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblBookCategory.ForeColor = SystemColors.MenuHighlight;
             lblBookCategory.Location = new Point(0, 458);
             lblBookCategory.Name = "lblBookCategory";
-            lblBookCategory.Size = new Size(180, 31);
+            lblBookCategory.Size = new Size(173, 31);
             lblBookCategory.TabIndex = 17;
             lblBookCategory.Text = "Book Category";
             // 
@@ -209,11 +209,11 @@
             // 
             lblBookName.AutoSize = true;
             lblBookName.BackColor = SystemColors.ButtonFace;
-            lblBookName.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblBookName.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblBookName.ForeColor = SystemColors.MenuHighlight;
             lblBookName.Location = new Point(6, 91);
             lblBookName.Name = "lblBookName";
-            lblBookName.Size = new Size(146, 31);
+            lblBookName.Size = new Size(139, 31);
             lblBookName.TabIndex = 11;
             lblBookName.Text = "Book Name";
             // 
@@ -221,11 +221,11 @@
             // 
             lblDescription.AutoSize = true;
             lblDescription.BackColor = SystemColors.ButtonFace;
-            lblDescription.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblDescription.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblDescription.ForeColor = SystemColors.MenuHighlight;
             lblDescription.Location = new Point(6, 145);
             lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(142, 31);
+            lblDescription.Size = new Size(138, 31);
             lblDescription.TabIndex = 10;
             lblDescription.Text = "Description";
             // 
@@ -233,11 +233,11 @@
             // 
             lblPublicationDate.AutoSize = true;
             lblPublicationDate.BackColor = SystemColors.ButtonFace;
-            lblPublicationDate.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblPublicationDate.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblPublicationDate.ForeColor = SystemColors.MenuHighlight;
             lblPublicationDate.Location = new Point(0, 289);
             lblPublicationDate.Name = "lblPublicationDate";
-            lblPublicationDate.Size = new Size(196, 31);
+            lblPublicationDate.Size = new Size(187, 31);
             lblPublicationDate.TabIndex = 9;
             lblPublicationDate.Text = "PublicationDate";
             // 
@@ -245,11 +245,11 @@
             // 
             lblQuantity.AutoSize = true;
             lblQuantity.BackColor = SystemColors.ButtonFace;
-            lblQuantity.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblQuantity.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblQuantity.ForeColor = SystemColors.MenuHighlight;
             lblQuantity.Location = new Point(0, 350);
             lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(113, 31);
+            lblQuantity.Size = new Size(108, 31);
             lblQuantity.TabIndex = 8;
             lblQuantity.Text = "Quantity";
             // 
@@ -257,11 +257,11 @@
             // 
             lblAuthor.AutoSize = true;
             lblAuthor.BackColor = SystemColors.ButtonFace;
-            lblAuthor.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblAuthor.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblAuthor.ForeColor = SystemColors.MenuHighlight;
             lblAuthor.Location = new Point(0, 407);
             lblAuthor.Name = "lblAuthor";
-            lblAuthor.Size = new Size(92, 31);
+            lblAuthor.Size = new Size(90, 31);
             lblAuthor.TabIndex = 7;
             lblAuthor.Text = "Author";
             // 
@@ -300,11 +300,11 @@
             // 
             lblBookID.AutoSize = true;
             lblBookID.BackColor = SystemColors.ButtonFace;
-            lblBookID.Font = new Font("Segoe UI Black", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblBookID.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblBookID.ForeColor = SystemColors.MenuHighlight;
             lblBookID.Location = new Point(6, 38);
             lblBookID.Name = "lblBookID";
-            lblBookID.Size = new Size(104, 31);
+            lblBookID.Size = new Size(100, 31);
             lblBookID.TabIndex = 1;
             lblBookID.Text = "Book ID";
             // 
@@ -324,7 +324,7 @@
             lblAddUpdate.AutoSize = true;
             lblAddUpdate.Font = new Font("Segoe UI Black", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblAddUpdate.ForeColor = SystemColors.ButtonFace;
-            lblAddUpdate.Location = new Point(12, 6);
+            lblAddUpdate.Location = new Point(12, 9);
             lblAddUpdate.Name = "lblAddUpdate";
             lblAddUpdate.Size = new Size(506, 62);
             lblAddUpdate.TabIndex = 13;

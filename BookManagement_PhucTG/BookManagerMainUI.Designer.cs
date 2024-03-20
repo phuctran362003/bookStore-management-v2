@@ -54,7 +54,7 @@
             lblHeader.AutoSize = true;
             lblHeader.Font = new Font("Segoe UI Black", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             lblHeader.ForeColor = Color.Snow;
-            lblHeader.Location = new Point(-2, 9);
+            lblHeader.Location = new Point(12, 9);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new Size(363, 62);
             lblHeader.TabIndex = 0;
@@ -80,7 +80,7 @@
             grbSearchCriteria.Controls.Add(txtBookName);
             grbSearchCriteria.Controls.Add(lblBookDescription);
             grbSearchCriteria.Controls.Add(lblBookName);
-            grbSearchCriteria.Font = new Font("SF Mono", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grbSearchCriteria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grbSearchCriteria.ForeColor = SystemColors.HotTrack;
             grbSearchCriteria.Location = new Point(12, 86);
             grbSearchCriteria.Name = "grbSearchCriteria";
@@ -107,14 +107,14 @@
             // 
             txtKeyword.Location = new Point(537, 38);
             txtKeyword.Name = "txtKeyword";
-            txtKeyword.Size = new Size(218, 25);
+            txtKeyword.Size = new Size(218, 27);
             txtKeyword.TabIndex = 4;
             // 
             // txtBookName
             // 
             txtBookName.Location = new Point(155, 38);
             txtBookName.Name = "txtBookName";
-            txtBookName.Size = new Size(218, 25);
+            txtBookName.Size = new Size(218, 27);
             txtBookName.TabIndex = 3;
             // 
             // lblBookDescription
@@ -163,7 +163,7 @@
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(34, 114);
+            btnUpdate.Location = new Point(34, 113);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(128, 29);
             btnUpdate.TabIndex = 8;
@@ -226,11 +226,11 @@
             grbActionCriteria.Controls.Add(btnUpdate);
             grbActionCriteria.Controls.Add(btnDelete);
             grbActionCriteria.Controls.Add(btnCreate);
-            grbActionCriteria.Font = new Font("SF Mono", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grbActionCriteria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grbActionCriteria.ForeColor = SystemColors.HotTrack;
-            grbActionCriteria.Location = new Point(797, 179);
+            grbActionCriteria.Location = new Point(797, 189);
             grbActionCriteria.Name = "grbActionCriteria";
-            grbActionCriteria.Size = new Size(191, 303);
+            grbActionCriteria.Size = new Size(191, 293);
             grbActionCriteria.TabIndex = 13;
             grbActionCriteria.TabStop = false;
             grbActionCriteria.Text = "Action";
