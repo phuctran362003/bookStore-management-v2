@@ -282,7 +282,6 @@
             txtBookID.Size = new Size(250, 27);
             txtBookID.TabIndex = 0;
             txtBookID.TextAlign = HorizontalAlignment.Center;
-            txtBookID.Click += txtBookID_Click;
             // 
             // lblBookID
             // 
@@ -314,9 +313,9 @@
             lblAddUpdate.ForeColor = SystemColors.ButtonFace;
             lblAddUpdate.Location = new Point(12, 9);
             lblAddUpdate.Name = "lblAddUpdate";
-            lblAddUpdate.Size = new Size(506, 62);
+            lblAddUpdate.Size = new Size(294, 62);
             lblAddUpdate.TabIndex = 13;
-            lblAddUpdate.Text = "Add | Update a Book";
+            lblAddUpdate.Text = "Add a Book";
             // 
             // BookDetailForm
             // 

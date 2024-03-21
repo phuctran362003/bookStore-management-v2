@@ -11,10 +11,16 @@ namespace Services
     public class BookDAO
     {
         BookDTO bookDTO = new BookDTO();
+        Book b = new Book();
 
         public List<Book> GetAllBooks()
         {
             return bookDTO.GetAll();
+        }
+
+        public bool CheckIfValidID(int id)
+        {
+            return b.BookId == id;  
         }
 
         public List<Book> Search(string keyword)

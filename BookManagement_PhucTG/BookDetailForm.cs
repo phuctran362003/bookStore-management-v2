@@ -23,7 +23,6 @@ namespace BookManagement_PhucTG
         {
             InitializeComponent();
         }
-        
 
         private void BookDetailForm_Load(object sender, EventArgs e)
         {
@@ -35,8 +34,6 @@ namespace BookManagement_PhucTG
             //vi diệu
             //cboBookCategory.SelectedValue = 5; //default display
 
-
-
             //check if user clicks update
             //if yes, fill data into Text boxes
 
@@ -44,8 +41,8 @@ namespace BookManagement_PhucTG
             {
                 //check if user clicks update
                 //if yes, fill data into Text boxes
-                lblHeader.Text = " Update a new book";
-                txtBookID.Enabled = false;
+                lblAddUpdate.Text = "Update a new book";
+
                 txtBookID.BackColor = Color.LightGray;
                 txtBookID.Text = SelectedBook.BookId.ToString();
 
@@ -62,19 +59,12 @@ namespace BookManagement_PhucTG
             }
             else
             {
-                lblHeader.Text = " Add a new book";
+                lblAddUpdate.Text = " Add a new book";
             }
         }
 
 
-        private void txtBookID_Click(object sender, EventArgs e)
-        {
-            if (SelectedBook != null)
-            {
-                MessageBox.Show("You cannot change ID of a existing book! ", "Duplicate Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -84,15 +74,26 @@ namespace BookManagement_PhucTG
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Update Successfuly ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Book b = new Book();
 
-            BookManagerMainUI f = new BookManagerMainUI();
-            f.selected = SelectedBook;
-            this.Close();
+            if (SelectedBook == null)
+            {
+                b.BookName = txtBookName.Text;
+                b.Description = txtBookDescription.Text;
+                b.Quantity = Convert.ToInt32(txtQuantity.Text);
+                b.Author = txtAuthor.Text;
+                b.Price = Convert.ToDouble(txtPrice.Text);
+                b.BookCategoryId = (int)cboBookCategory.SelectedValue;
 
-            f.ShowDialog();
-            bookDAO.UpdateABook(SelectedBook);
-            f.RefreshLoad();
+                bookDAO.AddABook(b);                
+
+            } else
+            {               
+                bookDAO.UpdateABook(b);
+            }
+
+
+
         }
     }
 }

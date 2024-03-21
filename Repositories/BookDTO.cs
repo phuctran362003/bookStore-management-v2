@@ -1,4 +1,5 @@
-﻿using Repositories.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Repositories.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace Repositories
         {
             db.Books.Update(book);
             db.SaveChanges();
+
         }
 
         public void Delete(int id)
