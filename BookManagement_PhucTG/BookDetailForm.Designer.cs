@@ -75,7 +75,7 @@
             grbBookInfo.Controls.Add(txtBookDescription);
             grbBookInfo.Controls.Add(txtBookID);
             grbBookInfo.Controls.Add(lblBookID);
-            grbBookInfo.Font = new Font("SF Mono", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            grbBookInfo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             grbBookInfo.ForeColor = SystemColors.HotTrack;
             grbBookInfo.Location = new Point(12, 84);
             grbBookInfo.Name = "grbBookInfo";
@@ -132,7 +132,7 @@
             cboBookCategory.FormattingEnabled = true;
             cboBookCategory.Location = new Point(195, 458);
             cboBookCategory.Name = "cboBookCategory";
-            cboBookCategory.Size = new Size(248, 26);
+            cboBookCategory.Size = new Size(248, 28);
             cboBookCategory.TabIndex = 6;
             // 
             // dtpPublicatioDate
@@ -164,7 +164,7 @@
             txtAuthor.BackColor = Color.FromArgb(224, 224, 224);
             txtAuthor.Location = new Point(195, 407);
             txtAuthor.Name = "txtAuthor";
-            txtAuthor.Size = new Size(248, 25);
+            txtAuthor.Size = new Size(248, 27);
             txtAuthor.TabIndex = 5;
             // 
             // txtPrice
@@ -172,7 +172,7 @@
             txtPrice.BackColor = Color.FromArgb(224, 224, 224);
             txtPrice.Location = new Point(600, 289);
             txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(183, 25);
+            txtPrice.Size = new Size(183, 27);
             txtPrice.TabIndex = 7;
             // 
             // txtQuantity
@@ -180,7 +180,7 @@
             txtQuantity.BackColor = Color.FromArgb(224, 224, 224);
             txtQuantity.Location = new Point(195, 350);
             txtQuantity.Name = "txtQuantity";
-            txtQuantity.Size = new Size(248, 25);
+            txtQuantity.Size = new Size(248, 27);
             txtQuantity.TabIndex = 4;
             // 
             // txtBookName
@@ -188,7 +188,7 @@
             txtBookName.BackColor = Color.FromArgb(224, 224, 224);
             txtBookName.Location = new Point(193, 91);
             txtBookName.Name = "txtBookName";
-            txtBookName.Size = new Size(590, 25);
+            txtBookName.Size = new Size(590, 27);
             txtBookName.TabIndex = 1;
             // 
             // lblBookName
@@ -223,9 +223,9 @@
             lblPublicationDate.ForeColor = SystemColors.MenuHighlight;
             lblPublicationDate.Location = new Point(0, 289);
             lblPublicationDate.Name = "lblPublicationDate";
-            lblPublicationDate.Size = new Size(187, 31);
+            lblPublicationDate.Size = new Size(193, 31);
             lblPublicationDate.TabIndex = 9;
-            lblPublicationDate.Text = "PublicationDate";
+            lblPublicationDate.Text = "Publication Date";
             // 
             // lblQuantity
             // 
@@ -279,7 +279,7 @@
             txtBookID.Location = new Point(193, 38);
             txtBookID.Name = "txtBookID";
             txtBookID.RightToLeft = RightToLeft.Yes;
-            txtBookID.Size = new Size(250, 25);
+            txtBookID.Size = new Size(250, 27);
             txtBookID.TabIndex = 0;
             txtBookID.TextAlign = HorizontalAlignment.Center;
             txtBookID.Click += txtBookID_Click;

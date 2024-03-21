@@ -15,6 +15,13 @@ namespace BookManagement_PhucTG
         {
             InitializeComponent();
         }
+
+        public void RefreshLoad ()
+        {
+            var result = bookDAO.GetAllBooks();
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = result;
+        }
         public void BookManagerMainUI_Load(object sender, EventArgs e)
         {
             var result = bookDAO.GetAllBooks();

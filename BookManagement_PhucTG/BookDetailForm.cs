@@ -23,6 +23,7 @@ namespace BookManagement_PhucTG
         {
             InitializeComponent();
         }
+        
 
         private void BookDetailForm_Load(object sender, EventArgs e)
         {
@@ -35,13 +36,17 @@ namespace BookManagement_PhucTG
             //cboBookCategory.SelectedValue = 5; //default display
 
 
+
             //check if user clicks update
             //if yes, fill data into Text boxes
+
             if (SelectedBook != null)
             {
+                //check if user clicks update
+                //if yes, fill data into Text boxes
+                lblHeader.Text = " Update a new book";
                 txtBookID.Enabled = false;
                 txtBookID.BackColor = Color.LightGray;
-
                 txtBookID.Text = SelectedBook.BookId.ToString();
 
                 txtBookName.Text = SelectedBook.BookName.ToString();
@@ -54,18 +59,13 @@ namespace BookManagement_PhucTG
                 //!important
                 //assign value BookCategoryID to combo box and convert it into BookGenreType; 
                 cboBookCategory.SelectedValue = SelectedBook.BookCategoryId;
-
             }
             else
             {
                 lblHeader.Text = " Add a new book";
             }
-
-
-
-
-
         }
+
 
         private void txtBookID_Click(object sender, EventArgs e)
         {
@@ -75,31 +75,24 @@ namespace BookManagement_PhucTG
             }
         }
 
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-
-
         }
+
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            SelectedBook.BookName = txtBookName.Text;
-            SelectedBook.Description = txtBookDescription.Text;
-            SelectedBook.PublicationDate = dtpPublicatioDate.Value;
-
-
-            bookDAO.UpdateABook(SelectedBook);
-
             MessageBox.Show("Update Successfuly ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
 
             BookManagerMainUI f = new BookManagerMainUI();
             f.selected = SelectedBook;
             this.Close();
+
             f.ShowDialog();
+            bookDAO.UpdateABook(SelectedBook);
+            f.RefreshLoad();
         }
     }
 }

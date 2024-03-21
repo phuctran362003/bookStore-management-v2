@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookManagement_PhucTG")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74abc5dccf611e1de280c87b72fe0f1ae4b11f0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58c5dee87118b68d57d14d6f7a776ae87297c50f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookManagement_PhucTG")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookManagement_PhucTG")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
