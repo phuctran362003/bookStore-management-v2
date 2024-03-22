@@ -44,6 +44,7 @@
             lblBookList = new Label();
             lblCopyright = new Label();
             grbActionCriteria = new GroupBox();
+            btnLogOut = new Button();
             grbSearchCriteria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookList).BeginInit();
             grbActionCriteria.SuspendLayout();
@@ -236,12 +237,27 @@
             grbActionCriteria.TabStop = false;
             grbActionCriteria.Text = "Action";
             // 
+            // btnLogOut
+            // 
+            btnLogOut.BackColor = Color.Silver;
+            btnLogOut.FlatStyle = FlatStyle.Flat;
+            btnLogOut.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogOut.ForeColor = SystemColors.ActiveCaptionText;
+            btnLogOut.Location = new Point(876, 30);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(83, 29);
+            btnLogOut.TabIndex = 14;
+            btnLogOut.Text = "Log Out";
+            btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // BookManagerMainUI
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.HotTrack;
             ClientSize = new Size(998, 512);
+            Controls.Add(btnLogOut);
             Controls.Add(grbActionCriteria);
             Controls.Add(lblCopyright);
             Controls.Add(lblBookList);
@@ -279,5 +295,6 @@
         private Label lblBookList;
         private Label lblCopyright;
         private GroupBox grbActionCriteria;
+        private Button btnLogOut;
     }
 }

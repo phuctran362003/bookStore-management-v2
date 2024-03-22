@@ -25,6 +25,8 @@ namespace BookManagement_PhucTG
 
         public void BookManagerMainUI_Load(object sender, EventArgs e)
         {
+            lblHeader.Text = "Book Manager, Welcome Admin ";
+
             RefreshLoad();
             //giấu cột Category ID
             dgvBookList.Columns["BookCategoryId"].Visible = false;
@@ -115,7 +117,7 @@ namespace BookManagement_PhucTG
             {
                 selected = (Book)dgvBookList.SelectedRows[0].DataBoundItem;
                 bookDAO.DeleteABookFromUI(selected.BookId);
-               
+
             }
 
             DialogResult answer = MessageBox.Show("Do you want to delete this book", "Delete this book ? ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -135,6 +137,13 @@ namespace BookManagement_PhucTG
         private void dgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            Hide();
+            loginForm.ShowDialog();
         }
     }
 }

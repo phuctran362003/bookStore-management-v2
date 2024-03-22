@@ -24,7 +24,7 @@ namespace BookManagement_PhucTG
             string email = txtEmail.Text;
             string password = txtPassword.Text;
             UserAccountDAO userAccountDAO = new UserAccountDAO();
-            UserAccount account = userAccountDAO.CheckLogin(email, password);
+            UserAccount? account = userAccountDAO.CheckLogin(email, password);
 
             if (account == null)
             {
@@ -32,14 +32,18 @@ namespace BookManagement_PhucTG
                 return;
 
             }
+            if (account.Role != 1)
+            {
+                MessageBox.Show("Invalid role! Please login again!", "Invalid privilige", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             if (account != null)
             {
-                MessageBox.Show("Welcome", "Welcome admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.Hide();
+               
                 BookManagerMainUI bookmgt = new BookManagerMainUI();
                 bookmgt.Show();
+                this.Hide();
                 return;
 
             }
@@ -54,6 +58,11 @@ namespace BookManagement_PhucTG
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Services
     public class UserAccountDAO
     {
         UserAccountDTO accountDTO = new UserAccountDTO();
-        public UserAccount CheckLogin(string email, string password)
+        public UserAccount? CheckLogin(string email, string password)
         {
             UserAccount account = accountDTO.Get(email);
             return (account != null && account.Password == password) ? account : null;

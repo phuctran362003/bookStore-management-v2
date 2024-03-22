@@ -9,10 +9,10 @@ namespace Repositories
 {
     public class UserAccountDTO
     {
-        BookManagementDb24Context db = new BookManagementDb24Context();
 
         public UserAccount Get(string email)
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
             return db.UserAccounts.FirstOrDefault(x => x.Email == email);
         }
     }

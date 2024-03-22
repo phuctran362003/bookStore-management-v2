@@ -39,6 +39,7 @@
             lblEmail = new Label();
             lblPassword = new Label();
             lblSubHeading = new Label();
+            btnQuit = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -68,6 +69,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(btnQuit);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnSignIn);
             panel2.Controls.Add(txtPassword);
@@ -153,6 +155,19 @@
             lblSubHeading.TabIndex = 1;
             lblSubHeading.Text = "Please Log In First";
             // 
+            // btnQuit
+            // 
+            btnQuit.BackColor = Color.FromArgb(255, 192, 192);
+            btnQuit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnQuit.ForeColor = SystemColors.HotTrack;
+            btnQuit.Location = new Point(50, 420);
+            btnQuit.Name = "btnQuit";
+            btnQuit.Size = new Size(199, 40);
+            btnQuit.TabIndex = 8;
+            btnQuit.Text = "Quit";
+            btnQuit.UseVisualStyleBackColor = false;
+            btnQuit.Click += btnQuit_Click;
+            // 
             // LoginForm
             // 
             AcceptButton = btnSignIn;
@@ -188,5 +203,6 @@
         private Label lblPassword;
         private Label lblSubHeading;
         private PictureBox pictureBox1;
+        private Button btnQuit;
     }
 }
