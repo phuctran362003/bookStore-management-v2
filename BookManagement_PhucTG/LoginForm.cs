@@ -33,13 +33,21 @@ namespace BookManagement_PhucTG
 
             }
 
+            if (account != null)
+            {
+                MessageBox.Show("Welcome", "Welcome admin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+                BookManagerMainUI bookmgt = new BookManagerMainUI();
+                bookmgt.Show();
+                return;
+
+            }
+
             //admin account:
             //   admin@bookstore.com
             //   @123Ad
 
-            this.Hide();
-            BookManagerMainUI bookmgt = new BookManagerMainUI();
-            bookmgt.Show();
 
         }
 

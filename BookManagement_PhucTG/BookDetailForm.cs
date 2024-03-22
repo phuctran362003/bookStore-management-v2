@@ -43,7 +43,7 @@ namespace BookManagement_PhucTG
                 //if yes, fill data into Text boxes
                 lblAddUpdate.Text = "Update a new book";
 
-                txtBookID.BackColor = Color.LightGray;
+                txtBookID.BackColor = Color.LightGray;                
                 txtBookID.Text = SelectedBook.BookId.ToString();
 
                 txtBookName.Text = SelectedBook.BookName.ToString();

@@ -1,5 +1,6 @@
 ﻿
 
+using Repositories;
 using Repositories.Entities;
 using Services;
 
@@ -16,12 +17,7 @@ namespace BookManagement_PhucTG
             InitializeComponent();
         }
 
-        public void RefreshLoad ()
-        {
-            var result = bookDAO.GetAllBooks();
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
-        }
+      
         public void BookManagerMainUI_Load(object sender, EventArgs e)
         {
             var result = bookDAO.GetAllBooks();
@@ -38,16 +34,27 @@ namespace BookManagement_PhucTG
 
             Application.Exit();
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtKeyword.Text) && (string.IsNullOrEmpty(txtBookName.Text)))
+            if (string.IsNullOrWhiteSpace(txtKeyword.Text) && (string.IsNullOrWhiteSpace(txtBookName.Text)))
             {
                 MessageBox.Show("Search keyword is required", "Field text is required", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var result = bookDAO.Search(txtKeyword.Text.Trim());
+
+            string temp = txtKeyword.Text;
+
+            //if bookname filled
+            if (!string.IsNullOrEmpty(txtBookName.Text))
+            {
+                temp = txtBookName.Text;
+            }
+
+            var result = bookDAO.Search(temp.Trim().ToLower());
             dgvBookList.DataSource = null;
             dgvBookList.DataSource = result;
+
 
             //if no resul, notify and return the list
             if (dgvBookList.Rows.Count == 0)
@@ -60,7 +67,7 @@ namespace BookManagement_PhucTG
         private void btnCreate_Click(object sender, EventArgs e)
         {
             BookDetailForm f = new BookDetailForm();
-           
+
             f.ShowDialog();
             //no book is passed, show empty form
             //
@@ -91,7 +98,7 @@ namespace BookManagement_PhucTG
                 //lấy 1 dòng là kiểu object, là lấy Book từ DataSource = List<Book>
             }
         }
-        
+
         public void GetABook()
         {
 

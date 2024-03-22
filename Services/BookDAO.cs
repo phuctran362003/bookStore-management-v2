@@ -20,7 +20,7 @@ namespace Services
 
         public bool CheckIfValidID(int id)
         {
-            return b.BookId == id;  
+            return b.BookId == id;
         }
 
         public List<Book> Search(string keyword)
@@ -31,13 +31,13 @@ namespace Services
 
         public void Delete(int id)
         {
-             bookDTO.Delete(id);
+            bookDTO.Delete(id);
         }
 
 
-        
 
-        public void AddABook (Book book)
+
+        public void AddABook(Book book)
         {
             bookDTO.Create(book);   //try-catch, trùng mã số, bỏ trống ô nhập
         }
