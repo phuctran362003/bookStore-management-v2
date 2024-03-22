@@ -1,14 +1,5 @@
 ﻿using Repositories.Entities;
 using Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace BookManagement_PhucTG
 {
@@ -27,9 +18,9 @@ namespace BookManagement_PhucTG
         private void BookDetailForm_Load(object sender, EventArgs e)
         {
             //fill comboBox
-            cboBookCategory.DataSource = bookCategoryDAO.GetBookCategories();
-            cboBookCategory.DisplayMember = "BookGenreType";
-            cboBookCategory.ValueMember = "BookCategoryId";
+            cboBookCategoryID.DataSource = bookCategoryDAO.GetBookCategories();
+            cboBookCategoryID.DisplayMember = "BookGenreType";
+            cboBookCategoryID.ValueMember = "BookCategoryId";
 
             //vi diệu
             //cboBookCategory.SelectedValue = 5; //default display
@@ -43,7 +34,7 @@ namespace BookManagement_PhucTG
                 //if yes, fill data into Text boxes
                 lblAddUpdate.Text = "Update a new book";
 
-                txtBookID.BackColor = Color.LightGray;                
+                txtBookID.BackColor = Color.LightGray;
                 txtBookID.Text = SelectedBook.BookId.ToString();
 
                 txtBookName.Text = SelectedBook.BookName.ToString();
@@ -52,45 +43,70 @@ namespace BookManagement_PhucTG
                 txtQuantity.Text = SelectedBook.Quantity.ToString();
                 txtAuthor.Text = SelectedBook.Author.ToString();
                 txtPrice.Text = SelectedBook.Price.ToString();
+                cboBookCategoryID.SelectedValue = SelectedBook.BookCategoryId;
 
                 //!important
                 //assign value BookCategoryID to combo box and convert it into BookGenreType; 
-                cboBookCategory.SelectedValue = SelectedBook.BookCategoryId;
+                cboBookCategoryID.SelectedValue = SelectedBook.BookCategoryId;
             }
             else
             {
-                lblAddUpdate.Text = " Add a new book";
+                lblAddUpdate.Text = "Add a new book";
             }
         }
 
 
-        
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            Book b = new Book();
+            //we new a Book() with information taken from textbox
+            // for update 
+
+            //Nếu là sách Update, thì cuốn sách new đã có ID của Book Selected
+            //Nếu là sách Add(), thì Id là null nên sẽ lấy ID từ txtID
+            Book b = new Book()
+            {
+                BookId = int.Parse(txtBookID.Text),
+                BookName = txtBookName.Text,
+                Description = txtBookDescription.Text,
+                PublicationDate = dtpPublicatioDate.Value,
+                Quantity = int.Parse(txtQuantity.Text),
+                Author = txtAuthor.Text,
+                Price = double.Parse(txtPrice.Text),
+                BookCategoryId = int.Parse(cboBookCategoryID.SelectedValue.ToString()),
+            };
+
+
+
+            //gửi xuống DB thông qua service
 
             if (SelectedBook == null)
             {
-                b.BookName = txtBookName.Text;
-                b.Description = txtBookDescription.Text;
-                b.Quantity = Convert.ToInt32(txtQuantity.Text);
-                b.Author = txtAuthor.Text;
-                b.Price = Convert.ToDouble(txtPrice.Text);
-                b.BookCategoryId = (int)cboBookCategory.SelectedValue;
+                bookDAO.AddABookForUI(b);
 
-                bookDAO.AddABook(b);                
-
-            } else
-            {               
-                bookDAO.UpdateABook(b);
+                MessageBox.Show("Add successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);                
             }
+            else
+            {
+
+                bookDAO.UpdateABook(b);
+                MessageBox.Show("Update successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+
+            //cho dù new/edit thì xong phỉa tắt màn hình detail
+            Close();
+
+            //đóng màn hình detail thì phải F5 cái lưới grid
+            //Bên main form phải refresh lưới ở ngay sau chỗ gọi detail
+
 
 
 

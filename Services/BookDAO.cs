@@ -29,17 +29,23 @@ namespace Services
                                                x.Description.ToString().ToLower().Contains(keyword.ToLower())).ToList();
         }
 
-        public void Delete(int id)
+        public void DeleteABookFromUI(int id)
         {
             bookDTO.Delete(id);
         }
 
 
 
-
-        public void AddABook(Book book)
+        /// <summary>
+        /// This function create a new Book. The information of a Book is taken from UI
+        /// </summary>
+        /// <param name="book"></param>
+        public void AddABookForUI(Book book)
         {
-            bookDTO.Create(book);   //try-catch, trùng mã số, bỏ trống ô nhập
+            bookDTO.AddBook(book);   //try-catch, trùng mã số, bỏ trống ô nhập
+            //what if we input the same ID
+            // HINT:
+            // - promt ChatGPT: how to handle duplication of Primary key exception during creating a new Book in BookManagement app using Entity Framework Core in C#
         }
 
         public void UpdateABook(Book book)

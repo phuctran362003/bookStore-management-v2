@@ -10,25 +10,31 @@ namespace Repositories
 {
     public class BookDTO
     {
-        BookManagementDb24Context db = new BookManagementDb24Context();
         public Book Get(int id)
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
+
             return db.Books.FirstOrDefault(x => x.BookId == id);
         }
         public List<Book> GetAll()
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
+
             return db.Books.ToList();
         }
 
-        public void Create(Book book)
+        public void AddBook(Book book)
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
             db.Books.Add(book);
             db.SaveChanges();
-
         }
 
+        //this func will update a existing book through DbContext
+        //somewhere will new Book() and push that book into this func
         public void Update(Book book)
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
             db.Books.Update(book);
             db.SaveChanges();
 
@@ -36,6 +42,8 @@ namespace Repositories
 
         public void Delete(int id)
         {
+            BookManagementDb24Context db = new BookManagementDb24Context();
+
             var book = db.Books.FirstOrDefault(x => x.BookId == id);
             if (book != null)
             {

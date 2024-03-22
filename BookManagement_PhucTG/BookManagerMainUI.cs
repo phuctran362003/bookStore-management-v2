@@ -17,16 +17,17 @@ namespace BookManagement_PhucTG
             InitializeComponent();
         }
 
-      
+        public void RefreshLoad()
+        {
+            dgvBookList.DataSource = null;
+            dgvBookList.DataSource = bookDAO.GetAllBooks();
+        }
+
         public void BookManagerMainUI_Load(object sender, EventArgs e)
         {
-            var result = bookDAO.GetAllBooks();
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
-
+            RefreshLoad();
             //giấu cột Category ID
-
-            dgvBookList.Columns["BookCategory"].Visible = false;
+            dgvBookList.Columns["BookCategoryId"].Visible = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -69,8 +70,11 @@ namespace BookManagement_PhucTG
             BookDetailForm f = new BookDetailForm();
 
             f.ShowDialog();
+
             //no book is passed, show empty form
             //
+            //F5 lưới ở đây
+            RefreshLoad();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -87,6 +91,7 @@ namespace BookManagement_PhucTG
             //pass selected book to show in detail form
             //khai báo biến, new, gán prop, show dialog
             // thằng form detail mở lên check selected có null ko, khác null thì data đc gửi sang
+            RefreshLoad();
         }
 
         private void dgvBookList_SelectionChanged(object sender, EventArgs e)
@@ -109,20 +114,27 @@ namespace BookManagement_PhucTG
             if (dgvBookList.SelectedRows.Count > 0)
             {
                 selected = (Book)dgvBookList.SelectedRows[0].DataBoundItem;
-                bookDAO.Delete(selected.BookId);
-                MessageBox.Show("Delete successfully! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bookDAO.DeleteABookFromUI(selected.BookId);
+               
             }
+
+            DialogResult answer = MessageBox.Show("Do you want to delete this book", "Delete this book ? ", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (answer == DialogResult.No)
+                return;
+
+
             //delete thành công thì refresh lại lưới
-            var result = bookDAO.GetAllBooks();
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
+            MessageBox.Show("Delete successfully! ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RefreshLoad();
+            selected = null;
+
+
+
         }
 
         private void dgvBookList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var result = bookDAO.GetAllBooks();
-            dgvBookList.DataSource = null;
-            dgvBookList.DataSource = result;
+
         }
     }
 }

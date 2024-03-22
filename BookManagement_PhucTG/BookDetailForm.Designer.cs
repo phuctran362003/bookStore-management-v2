@@ -33,7 +33,7 @@
             groupBox1 = new GroupBox();
             btnCancel = new Button();
             btnSaveChanges = new Button();
-            cboBookCategory = new ComboBox();
+            cboBookCategoryID = new ComboBox();
             dtpPublicatioDate = new DateTimePicker();
             lblBookCategory = new Label();
             txtAuthor = new TextBox();
@@ -59,7 +59,7 @@
             // 
             grbBookInfo.BackColor = SystemColors.ButtonFace;
             grbBookInfo.Controls.Add(groupBox1);
-            grbBookInfo.Controls.Add(cboBookCategory);
+            grbBookInfo.Controls.Add(cboBookCategoryID);
             grbBookInfo.Controls.Add(dtpPublicatioDate);
             grbBookInfo.Controls.Add(lblBookCategory);
             grbBookInfo.Controls.Add(txtAuthor);
@@ -126,14 +126,14 @@
             btnSaveChanges.UseVisualStyleBackColor = false;
             btnSaveChanges.Click += btnSaveChanges_Click;
             // 
-            // cboBookCategory
+            // cboBookCategoryID
             // 
-            cboBookCategory.BackColor = Color.FromArgb(224, 224, 224);
-            cboBookCategory.FormattingEnabled = true;
-            cboBookCategory.Location = new Point(195, 458);
-            cboBookCategory.Name = "cboBookCategory";
-            cboBookCategory.Size = new Size(248, 28);
-            cboBookCategory.TabIndex = 6;
+            cboBookCategoryID.BackColor = Color.FromArgb(224, 224, 224);
+            cboBookCategoryID.FormattingEnabled = true;
+            cboBookCategoryID.Location = new Point(195, 458);
+            cboBookCategoryID.Name = "cboBookCategoryID";
+            cboBookCategoryID.Size = new Size(248, 28);
+            cboBookCategoryID.TabIndex = 6;
             // 
             // dtpPublicatioDate
             // 
@@ -340,7 +340,7 @@
         #endregion
 
         private GroupBox grbBookInfo;
-        private ComboBox cboBookCategory;
+        private ComboBox cboBookCategoryID;
         private DateTimePicker dtpPublicatioDate;
         private Label lblBookCategory;
         private TextBox txtAuthor;
